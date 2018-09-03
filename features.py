@@ -42,7 +42,7 @@ class FeatureSet:
             self.set(name)
             return
         
-        parser = getattr(self, "_parse_" + name, self.parse_other)
+        parser = getattr(self, "_parse_" + name, self._parse_other)
         value = parser(value)
         self.set(name, value)
     

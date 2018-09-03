@@ -2,14 +2,15 @@ import client
 import sys
 import itertools
 
-_TARGET = "#shitshow"
-_SERVER = "irc.hellsite.site"
+_TARGET = "#no_one_here"
+_SERVER = "chat.freenode.net"
 _PORT = 6667
 _NICK = "uIRC_client"
 
 def on_connect(connection, event):
     if client.is_channel(_TARGET):
         connection.join(_TARGET)
+        print("Joined server %s on channel %s" % (_SERVER, _TARGET))
         return
     main_loop(connection)
 

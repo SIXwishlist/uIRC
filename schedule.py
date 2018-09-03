@@ -1,6 +1,5 @@
 import abc
 import extern_libs
-from extern_libs import InvokeScheduler
 
 __metaclass__ = type
 
@@ -22,7 +21,7 @@ class IScheduler:
     def run_pending(self):
         "invoke the functions that are due"
 
-def DefaultScheduler(InvokeScheduler, IScheduler):
+class DefaultScheduler(extern_libs.InvokeScheduler, IScheduler):
     def execute_every(self, period, func):
         self.add(extern_libs.PeriodicCommand.after(period, func))
     
