@@ -816,8 +816,6 @@ class Reactor:
         self._on_disconnect = on_disconnect
 
         sched = self.scheduler_class()
-        print("Hello! We'ved reached assertion point. sched:")
-        print(sched)
         assert isinstance(sched, schedule.IScheduler)
         self.scheduler = sched
 

@@ -258,14 +258,14 @@ def now():
     Return current timezone-aware datetime
     """
 
-    return datetime.datetime.utcnow().replace(tzinfo = pytz.utc)
+    return datetime.datetime.utcnow().replace(tzinfo = utc)
 
 def from_timestamp(ts):
     """
     Converts numeric --> location aware timestamp
     """
 
-    return datetime.datetime.utcfromtimestamp(ts).replace(tzinfo = pytz.utc)
+    return datetime.datetime.utcfromtimestamp(ts).replace(tzinfo = utc)
 
 class DelayedCommand(datetime.datetime):
     """
